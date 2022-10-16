@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::view('contact us','contact');
+Route::view('contact_us','contact');
+Route::view('about_us','about_us');
+Route::view('admin_pannel','admin_pannel');
+
+#controller areas
+Route::get('customers', [CustomersController::class, 'list']);
+Route::post('customers',[CustomersController::class, 'store']);
